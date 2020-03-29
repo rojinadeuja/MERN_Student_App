@@ -9,6 +9,7 @@ import axios from 'axios'; //Import Axiosto send student's data to the MongoDb s
 export default class CreateStudent extends Component {
     constructor(props){
         super(props)
+
         //Setting up functions
         this.onChangeStudentName = this.onChangeStudentName.bind(this);
         this.onChangeStudentEmail = this.onChangeStudentEmail.bind(this);
@@ -42,20 +43,19 @@ export default class CreateStudent extends Component {
         return(
         <div class="form-wrapper">
             <Form onSubmit={this.onSubmit}>
+                <Form.Group controlId="Rollno">
+                     <Form.Label>Roll No.</Form.Label>
+                    <Form.Control type="text" value={this.state.rollno} onChange={this.onChangeStudentRollno}/>
+                </Form.Group>
                 <Form.Group controlId="Name">
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Full Name</Form.Label>
                     <Form.Control type="text" value={this.state.name} onChange={this.onChangeStudentName}/>
                 </Form.Group>
                 <Form.Group controlId="Email">
-                    <Form.Label>Email</Form.Label>
+                    <Form.Label>Email Address</Form.Label>
                     <Form.Control type="email" value={this.state.email} onChange={this.onChangeStudentEmail}/>
                 </Form.Group>
-                <Form.Group controlId="Rollno">
-                     <Form.Label>Roll no</Form.Label>
-                    <Form.Control type="text" value={this.state.rollno} onChange={this.onChangeStudentRollno}/>
-                </Form.Group>
-                
-                <Button variant="danger" size="lg" block="block" type="submit">
+                <Button variant="success" size="lg" block="block" type="submit">
                     Create Student
                 </Button>
             </Form>

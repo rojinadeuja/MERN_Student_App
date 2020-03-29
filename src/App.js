@@ -7,6 +7,7 @@ import Row from "react-bootstrap/Row"; //Import Row
 import Col from "react-bootstrap/Col"; //Import Col
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom"; //Import React Dom Components
 import './App.css';
+
 //Import Components
 import CreateStudent from "./components/create-student.component";
 import EditStudent from "./components/edit-student.component";
@@ -21,7 +22,7 @@ function App() {
 
             <Navbar.Brand>
               <Link to={"/create-student"} className="nav-link">
-                React MERN Stack App
+                STUDENT MANAGEMENT APP
               </Link>
             </Navbar.Brand>
 
@@ -31,12 +32,6 @@ function App() {
                   Create Student
                 </Link>
               </Nav>
-
-              {/* <Nav>
-                <Link to={"/edit-student/:id"} className="nav-link">
-                  Edit Student
-                </Link>
-              </Nav> */}
 
               <Nav>
                 <Link to={"/student-list"} className="nav-link">
